@@ -20,7 +20,7 @@ public class test03 {
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 
 		processEngine.getRepositoryService().createDeployment().name("报销单审核流程").addClasspathResource("BizClaimVoucher.bpmn").addClasspathResource("BizClaimVoucher.png").deploy();
-
+		System.out.println("aaaaaaa");
 	}
 
 
