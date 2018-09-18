@@ -11,55 +11,55 @@ import org.junit.Test;
 
 public class test03 {
 
-
-	//°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡°¡
-	//²¿ÊğÁ÷³Ì
+	//,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+	//å•Šå•Šå•Šå•Šå•Šå•Šå•Šå•Šå•Šå•Šå•Š
+	//éƒ¨ç½²æµç¨‹
 	@Test
 	public void test01() {
 
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 
-		processEngine.getRepositoryService().createDeployment().name("±¨Ïúµ¥ÉóºËÁ÷³Ì").addClasspathResource("BizClaimVoucher.bpmn").addClasspathResource("BizClaimVoucher.png").deploy();
+		processEngine.getRepositoryService().createDeployment().name("æŠ¥é”€å•å®¡æ ¸æµç¨‹").addClasspathResource("BizClaimVoucher.bpmn").addClasspathResource("BizClaimVoucher.png").deploy();
 
 	}
 
 
-	//Æô¶¯Á÷³Ì
+	//å¯åŠ¨æµç¨‹
 	@Test
 	public void test02() {
 
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 		Map<String, Object> map=new HashMap<String,Object>();
-		map.put("inputuser", "ÀîºÚ");
+		map.put("inputuser", "æé»‘");
 		processEngine.getRuntimeService().startProcessInstanceByKey("BizClaimVoucher",map);
 
 	}
 
 
-	//¸ù¾İ´¦ÀíÈË²éÑ¯Ïà¹ØµÄÈÎÎñ
+	//æ ¹æ®å¤„ç†äººæŸ¥è¯¢ç›¸å…³çš„ä»»åŠ¡
 	@Test
 	public void test03() {
 
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 
-		List<Task> list=processEngine.getTaskService().createTaskQuery().taskAssignee("ÀîĞ¡Ğ¡").list();
+		List<Task> list=processEngine.getTaskService().createTaskQuery().taskAssignee("æå°å°").list();
 		for (Task task : list) {
-			System.out.println("ÈÎÎñÃû³Æ£º"+task.getName());
-			System.out.println("ÈÎÎñID£º"+task.getId());
-			System.out.println("Á÷³ÌÊµÀıID£º"+task.getProcessInstanceId());
+			System.out.println("ä»»åŠ¡åç§°ï¼š"+task.getName());
+			System.out.println("ä»»åŠ¡IDï¼š"+task.getId());
+			System.out.println("æµç¨‹å®ä¾‹IDï¼š"+task.getProcessInstanceId());
 		}
 
 
 	}
 
 
-	//Ô±¹¤·¢Æğ±¨Ïúµ¥
+	//å‘˜å·¥å‘èµ·æŠ¥é”€å•
 	@Test
 	public void test05() {
 
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 		Map<String, Object> map=new HashMap<String,Object>();
-		map.put("inputuser", "ÔüÔü»Ô");
+		map.put("inputuser", "æ¸£æ¸£è¾‰");
 		map.put("role", "manager");
 
 
@@ -68,13 +68,13 @@ public class test03 {
 
 	}
 
-	//²¿ÃÅ¾­ÀíÍê³É
+	//éƒ¨é—¨ç»ç†å®Œæˆ
 	@Test
 	public void test06() {
 
 		ProcessEngine processEngine=ProcessEngines.getDefaultProcessEngine();
 		Map<String, Object> map=new HashMap<String,Object>();
-		map.put("inputuser", "ÀîĞ¡Ğ¡");
+		map.put("inputuser", "æå°å°");
 		map.put("rollback", "no");
 
 
